@@ -1,12 +1,15 @@
-import { CUSTOM_ELEMENTS_SCHEMA, NgModule, NO_ERRORS_SCHEMA } from '@angular/core';
+import { HomeEffects } from './state/home.effects';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
+
+import { EffectsModule } from '@ngrx/effects';
+import { StoreModule } from '@ngrx/store';
 
 import { InputTextModule } from "primeng/inputtext";
 import { ButtonModule } from 'primeng/button';
 
 import { HomePage } from './home.page';
-import { StoreModule } from '@ngrx/store';
 import { homeReducer } from './state/home.reducer';
 
 @NgModule({
@@ -18,7 +21,8 @@ import { homeReducer } from './state/home.reducer';
     InputTextModule,
     ReactiveFormsModule,
     ButtonModule,
-    StoreModule.forFeature('home', homeReducer)
+    StoreModule.forFeature('home', homeReducer),
+    EffectsModule.forFeature([HomeEffects])
   ],
 })
 export class HomeModule { }

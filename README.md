@@ -71,5 +71,16 @@ https://angular.io/cli/generate#class
         <p>createSelector = Selecionar porção especifica de parte da store, </p>
     </div>
     </details>
+    <details>
+        <summary>Effects</summary>
+    <div>
+    <p>
+      Diferente de actions e selectors que são componentes declarados que são utilizados, os effects são como services que precisam ser injetados e bindados com app module, precisa ser declarada como provider.
+      Ele pode receber uma action ou disparar action.
+      Quando um reducer não dispatcha onde foi invocada no effects, é necessário utilizado { dispatch: false }
+      Ele pode ser uma reação no lado servidor depende de uma action invocada
+    </p>
+    </div>
+    </details>
 </div>
 </details>
