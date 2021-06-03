@@ -1,13 +1,26 @@
-<div class="card">
-  <div class="p-fluid p-formgrid p-grid">
-    <div class="p-field p-col">
-      <label for="search">{{ text }}</label>
-      <input id="search" type="text" pInputText [formControl]="searchControl"/>
-      <button [disabled]="!searchControl.valid" (click)="doSearch()" label="Pesquisar" pButton pRipple type="button" class="p-button-rounded p-button-secondary"></button>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Card title</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <label for="search">{{ text }}</label>
+            <input id="search" type="text" pInputText [formControl]="searchControl"/>
+            <button [disabled]="!searchControl.valid" (click)="doSearch()" label="Pesquisar" class="btn btn-lg btn-success">Pesquisar</button>
+        </div>
+      </div>
     </div>
-    <div class="p-field p-col">
-      <label for="searchAutoComplete">Pesquisar com <i>autocomplete</i></label>
-      <input id="searchAutoComplete" type="text" pInputText />
+    <div class="col">
+      <div class="card">
+        <img src="..." class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Pesquisar com autocomplete</h5>
+          <input id="searchAutoComplete" type="text" />
+        </div>
+      </div>
     </div>
   </div>
 </div>
+

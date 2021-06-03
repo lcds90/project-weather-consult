@@ -26,6 +26,7 @@ https://angular.io/cli/generate#class
     <p>
     A store é um JSON que guarda um estado da aplicação, no appModule é sua inicialização e nos   módulos filhos é adicionado as propriedades que são os reducers.
     </p>
+    <p>Pelas boas práticas, comece escrevendo pelas <b>actions</b>!</p>
     <details>
         <summary>Reducer</summary>
         <div>
@@ -78,9 +79,12 @@ https://angular.io/cli/generate#class
       Diferente de actions e selectors que são componentes declarados que são utilizados, os effects são como services que precisam ser injetados e bindados com app module, precisa ser declarada como provider.
       Ele pode receber uma action ou disparar action.
       Quando um reducer não dispatcha onde foi invocada no effects, é necessário utilizado { dispatch: false }
-      Ele pode ser uma reação no lado servidor depende de uma action invocada
+      Ele pode ser uma reação no lado servidor depende de uma action invocada, mas ele não depende de action para existir.
     </p>
     </div>
     </details>
 </div>
 </details>
+<p>
+Para se manipular resposta de requisições elas vem como observables, se utilizando mergeMap() ao inves de somente map()
+</p>

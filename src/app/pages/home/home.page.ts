@@ -15,18 +15,16 @@ export class HomePage implements OnInit {
 
  searchControl: FormControl;
  text!: string;
- constructor(private store: Store) { 
+ constructor(private store: Store) {
   this.searchControl = new FormControl('', Validators.required);
- }
+}
 
   ngOnInit(): void {
-    this.store.pipe(select(fromHomeSelectors.selectHomeText))
-      .subscribe(text => this.text = text)
   }
 
   doSearch(): void {
-    const text: string = this.searchControl.value
-    this.store.dispatch(fromHomeActions.changeText({ text }))
+    const query = this.searchControl.value;
+    this.store.dispatch(fromHomeActions.loadCurrentWeather({ query }));
   }
 
 }
