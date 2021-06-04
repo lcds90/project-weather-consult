@@ -15,12 +15,11 @@ export class WeatherService {
   }
 
   getCityWeatherByQuery(query: string): Observable<CityWeather> {
-    const params = new HttpParams({ fromObject: { q: query }});
-    return this.doGet('weather', params)
+    const params = new HttpParams({ fromObject: { q: query } });
+    return this.doGet<any>('weather', params)
       .pipe(map(response => responseToCityWeather(response)));
   }
 
-  // NOTE todas as requests as API irão ser processadas por essa função genérica
   private doGet<T>(url: string, params: HttpParams): Observable<T> {
     params = params.append('appid', environment.apiKey);
     params = params.append('lang', 'pt_br');
