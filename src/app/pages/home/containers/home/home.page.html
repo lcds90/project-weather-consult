@@ -24,8 +24,8 @@
   </div>
   <div class="row">
     <app-loader class="col" *ngIf="loading$ | async"></app-loader>
-    <div class="col" *ngIf="!(loading$ | async) && !(error$ | async) && !!(cityWeather$ | async)">
-      {{ (cityWeather$ | async ).city.name }}
+    <div class="col" *ngIf="!(loading$ | async) && !(error$ | async) && !!(cityWeather)">
+      <app-current-weather [cityWeather]="cityWeather (toggleBookmark)="onToogleBookmark()" | async"></app-current-weather>
     </div>
     <div class="col" *ngIf="!(loading$ | async) && error$ | async">
       <a>Houve algum erro, tente novamente...</a>

@@ -7,12 +7,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreModule } from '@ngrx/store';
 
-import { HomePage } from './home.page';
+import { HomePage } from './containers/home/home.page';
 import { homeReducer } from './state/home.reducer';
+import { CurrentWeatherComponent } from './components/current-weather/current-weather.component';
 
 @NgModule({
   declarations: [
-    HomePage
+    HomePage,
+    CurrentWeatherComponent
   ],
   imports: [
     CommonModule,
