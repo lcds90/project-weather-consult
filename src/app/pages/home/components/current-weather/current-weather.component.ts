@@ -17,7 +17,7 @@ export class CurrentWeatherComponent {
     return `${this.cityWeather.city.name} ${this.cityWeather.city.country}`;
   }
 
-  public onToggleBookmark(){
+   onToggleBookmark(){
     this.toggleBookmark.emit();
   }
 }
