@@ -11,6 +11,7 @@ import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from 
 export class CurrentWeatherComponent {
 
   @Input() cityWeather: CityWeather;
+  @Input() isFavorite: boolean;
   @Output() toggleBookmark = new EventEmitter();
 
   get cityName(): string {
