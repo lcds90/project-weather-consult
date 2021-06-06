@@ -1,8 +1,12 @@
-<nav>
-  <ul ngbNav [activeId]="route.fragment | async" class="nav-tabs">
-    <li [ngbNavItem]="link.url" *ngFor="let link of links">
-      <a ngbNavLink [routerLink]="link.url">{{ link.title }}</a>
-    </li>
-  </ul>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">Consulta de tempo</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link"  *ngFor="let link of links" [routerLink]="link.url">{{link.title}}</a>
+    </div>
+  </div>
 </nav>
 <router-outlet></router-outlet>

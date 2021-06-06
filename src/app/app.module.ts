@@ -15,7 +15,6 @@ import { BookmarksModule } from './pages/bookmarks/bookmarks.module';
 import { HomeModule } from './pages/home/home.module';
 
 import { AppComponent } from './app.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { StoreRouterConnectingModule } from '@ngrx/router-store';
 import { CustomRouterSerializer } from './shared/state/router/router.reducer';
 
@@ -33,7 +32,6 @@ import { CustomRouterSerializer } from './shared/state/router/router.reducer';
     StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),
-    NgbModule,
     StoreRouterConnectingModule.forRoot({ serializer: CustomRouterSerializer }),
 
   ],
