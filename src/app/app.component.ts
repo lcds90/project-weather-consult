@@ -8,8 +8,8 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class AppComponent {
   links = [
-    { title: 'Home', fragment: '' },
-    { title: 'Bookmarks', fragment: 'bookmarks' }
+    { title: 'Home', url: '' },
+    { title: 'Bookmarks', url: 'bookmarks' }
   ];
 
   constructor(public route: ActivatedRoute) { }

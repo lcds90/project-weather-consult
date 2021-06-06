@@ -88,3 +88,5 @@ https://angular.io/cli/generate#class
 <p>
 Para se manipular resposta de requisições elas vem como observables, se utilizando mergeMap() ao inves de somente map()
 </p>
+<p>Quando você utiliza lazy loading, o build gera mais que um chunk além do main.js, possui o main.js.map que contém os sub-modulos</p>
+<p>Router Guard são utilizadas para fazer validações de rotas</p>

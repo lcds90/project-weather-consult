@@ -1,3 +1,4 @@
+import { reducers } from './shared/state/app.reducer';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +16,9 @@ import { HomeModule } from './pages/home/home.module';
 
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { StoreRouterConnectingModule } from '@ngrx/router-store';
+import { CustomRouterSerializer } from './shared/state/router/router.reducer';
+
 @NgModule({
   declarations: [
     AppComponent
@@ -26,10 +30,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     HomeModule,
     BookmarksModule,
-    StoreModule.forRoot({}, {}),
+    StoreModule.forRoot(reducers),
     StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
     EffectsModule.forRoot([]),
     NgbModule,
+    StoreRouterConnectingModule.forRoot({ serializer: CustomRouterSerializer }),
 
   ],
   providers: [],
