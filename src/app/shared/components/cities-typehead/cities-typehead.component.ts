@@ -13,6 +13,7 @@ import { ControlValueAccessor, NgControl } from '@angular/forms';
 export class CitiesTypeheadComponent implements OnInit, ControlValueAccessor {
 
   disabled: boolean;
+  loading: boolean;
   private onChange: (value: CityTypeaheadItem) => void;
   private onTouched: () => void;
   dataSource$: Observable<CityTypeaheadItem[]>

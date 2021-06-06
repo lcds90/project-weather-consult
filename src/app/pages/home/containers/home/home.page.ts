@@ -39,7 +39,13 @@ export class HomePage implements OnInit, OnDestroy {
     this.searchControl = new FormControl('', Validators.required);
     this.searchControlWithAutoComplete = new FormControl(undefined);
     this.searchControlWithAutoComplete.valueChanges
-      .subscribe(value => console.log('searchControl com auto complete:',value));
+      .pipe(takeUntil(this.componentDestroyed$))
+      .subscribe(value => {
+        console.log('searchControl com auto complete:', value)
+        if (!!value) {
+          this.store.dispatch(fromHomeActions.loadCurrentWeatherById({ id: value.geonameid.toString() }));
+        }
+      });
     this.cityWeather$ = this.store.pipe(select(fromHomeSelectors.selectCurrentWeather));
     this.cityWeather$
       .pipe(takeUntil(this.componentDestroyed$))
