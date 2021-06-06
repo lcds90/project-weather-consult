@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
+import * as moment from 'moment-timezone';
+import 'moment/locale/pt-br';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -12,5 +15,7 @@ export class AppComponent {
     { title: 'Bookmarks', url: 'bookmarks' }
   ];
 
-  constructor(public route: ActivatedRoute) { }
+  constructor(public route: ActivatedRoute) {
+    moment.locale('pt-br');
+  }
 }
