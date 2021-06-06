@@ -4,8 +4,7 @@
       <div class="card">
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <h5 class="card-title">Pesquisar</h5>
           <label for="search">{{ text }}</label>
             <input id="search" type="text" pInputText [formControl]="searchControl"/>
             <button [disabled]="!searchControl.valid" (click)="doSearch()" label="Pesquisar" class="btn btn-lg btn-success">Pesquisar</button>
@@ -17,7 +16,7 @@
         <img src="..." class="card-img-top" alt="...">
         <div class="card-body">
           <h5 class="card-title">Pesquisar com autocomplete</h5>
-          <app-cities-typehead></app-cities-typehead>
+          <app-cities-typehead [formControl]="searchControlWithAutoComplete"></app-cities-typehead>
         </div>
       </div>
     </div>

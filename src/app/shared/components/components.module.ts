@@ -12,7 +12,7 @@ import { FormsModule } from "@angular/forms";
   imports: [
     CommonModule,
     FormsModule,
-    TypeaheadModule
+    TypeaheadModule.forRoot()
   ],
   declarations: [
     LoaderComponent,
