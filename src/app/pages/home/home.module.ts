@@ -10,11 +10,13 @@ import { StoreModule } from '@ngrx/store';
 import { HomePage } from './containers/home/home.page';
 import { homeReducer } from './state/home.reducer';
 import { CurrentWeatherComponent } from './components/current-weather/current-weather.component';
+import { UnitSelectorComponent } from './containers/unit-selector/unit-selector.component';
 
 @NgModule({
   declarations: [
     HomePage,
-    CurrentWeatherComponent
+    CurrentWeatherComponent,
+    UnitSelectorComponent
   ],
   imports: [
     CommonModule,
